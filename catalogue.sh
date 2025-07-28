@@ -80,7 +80,7 @@ VALIDATE $? "Installing MongoDB Client"
 STATUS=$(mongosh --host mongodb.devopsmahankali.shop --eval 'db.getMongo().getDBNames().indexOf("catalogue")') # To Check if the database exists   
 if [ $STATUS -lt 0 ]
 then
-    mongosh --host mongodb.devopsmahankali.shop </app/db/master-data.js &>>$LOG_FILE
+    mongosh --host mongodb.devopsmahankali.shop  </app/db/master-data.js &>>$LOG_FILE
     VALIDATE $? "Loading data into MongoDB"
 else
     echo -e "Data is already loaded ... $Y SKIPPING $N"
